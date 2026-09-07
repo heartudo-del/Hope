@@ -1,0 +1,15 @@
+{
+  "name": "Weekly Timetable",
+  "short_name": "Timetable",
+  "description": "Personal weekly schedule that opens to what you're supposed to be doing right now.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff5f8",
+  "theme_color": "#d6336c",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

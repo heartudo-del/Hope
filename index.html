@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Weekly Timetable</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d6336c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Timetable">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Weekly Timetable</h1>
+  <p class="intro">Opens automatically at today's day and right now's activity — scroll freely from there.</p>
+
+  <div class="now-banner" id="now-banner">
+    <span class="banner-day"></span>
+    <span class="banner-activity"></span>
+    <span class="banner-next" hidden></span>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="dot"></span> Fixed commitment</span>
+    <span class="item"><span class="dot now"></span> Happening now</span>
+  </div>
+
+  <div class="day-card" data-day="1">
+    <div class="day-name-row"><p class="day-name">Monday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for the day</span></div>
+    <div class="row" data-start="510" data-end="690"><span class="time">08:30–11:30</span><span class="activity">Research (3h)</span></div>
+    <div class="row" data-start="690" data-end="750"><span class="time">11:30–12:30</span><span class="activity">Lunch</span></div>
+    <div class="row" data-start="750" data-end="780"><span class="time">12:30–13:00</span><span class="activity">Travel to tutoring</span></div>
+    <div class="row fixed" data-start="780" data-end="960"><span class="time">13:00–16:00</span><span class="activity">Tutoring</span></div>
+    <div class="row" data-start="960" data-end="990"><span class="time">16:00–16:30</span><span class="activity">Break</span></div>
+    <div class="row" data-start="990" data-end="1080"><span class="time">16:30–18:00</span><span class="activity">Research (1.5h)</span></div>
+    <div class="row fixed" data-start="1080" data-end="1200"><span class="time">18:00–20:00</span><span class="activity">Gym</span></div>
+    <div class="row" data-start="1200" data-end="1230"><span class="time">20:00–20:30</span><span class="activity">Dinner</span></div>
+    <div class="row" data-start="1230" data-end="1290"><span class="time">20:30–21:30</span><span class="activity">Research (1h)</span></div>
+    <div class="row" data-start="1290" data-end="1320"><span class="time">21:30–22:00</span><span class="activity">Reading</span></div>
+    <div class="row" data-start="1320" data-end="1350"><span class="time">22:00–22:30</span><span class="activity">Relaxation / social media</span></div>
+    <div class="row" data-start="1350" data-end="1365"><span class="time">22:30–22:45</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1365" data-end="1395"><span class="time">22:45–23:15</span><span class="activity">Check outfit for tomorrow</span></div>
+    <div class="row" data-start="1395" data-end="1410"><span class="time">23:15</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="2">
+    <div class="day-name-row"><p class="day-name">Tuesday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for the day</span></div>
+    <div class="row" data-start="510" data-end="660"><span class="time">08:30–11:00</span><span class="activity">Research (2.5h)</span></div>
+    <div class="row fixed" data-start="660" data-end="720"><span class="time">11:00–12:00</span><span class="activity">Tutoring</span></div>
+    <div class="row" data-start="720" data-end="780"><span class="time">12:00–13:00</span><span class="activity">Lunch</span></div>
+    <div class="row" data-start="780" data-end="990"><span class="time">13:00–16:30</span><span class="activity">Research (3.5h)</span></div>
+    <div class="row" data-start="990" data-end="1080"><span class="time">16:30–18:00</span><span class="activity">Free time / rest</span></div>
+    <div class="row fixed" data-start="1080" data-end="1200"><span class="time">18:00–20:00</span><span class="activity">Gym</span></div>
+    <div class="row" data-start="1200" data-end="1230"><span class="time">20:00–20:30</span><span class="activity">Dinner</span></div>
+    <div class="row" data-start="1230" data-end="1275"><span class="time">20:30–21:15</span><span class="activity">Reading</span></div>
+    <div class="row" data-start="1275" data-end="1320"><span class="time">21:15–22:00</span><span class="activity">Relaxation</span></div>
+    <div class="row" data-start="1320" data-end="1350"><span class="time">22:00–22:30</span><span class="activity">Social media</span></div>
+    <div class="row" data-start="1350" data-end="1365"><span class="time">22:30–22:45</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1365" data-end="1395"><span class="time">22:45–23:15</span><span class="activity">Check outfit for tomorrow</span></div>
+    <div class="row" data-start="1395" data-end="1410"><span class="time">23:15</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="3">
+    <div class="day-name-row"><p class="day-name">Wednesday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for the day</span></div>
+    <div class="row" data-start="510" data-end="600"><span class="time">08:30–10:00</span><span class="activity">Research (1.5h)</span></div>
+    <div class="row fixed" data-start="600" data-end="660"><span class="time">10:00–11:00</span><span class="activity">Tutoring</span></div>
+    <div class="row" data-start="660" data-end="780"><span class="time">11:00–13:00</span><span class="activity">Research (2h)</span></div>
+    <div class="row" data-start="780" data-end="840"><span class="time">13:00–14:00</span><span class="activity">Lunch</span></div>
+    <div class="row" data-start="840" data-end="960"><span class="time">14:00–16:00</span><span class="activity">Research (2h)</span></div>
+    <div class="row fixed" data-start="960" data-end="1080"><span class="time">16:00–18:00</span><span class="activity">Gym (moved earlier so it doesn't clash with Bible study)</span></div>
+    <div class="row" data-start="1080" data-end="1110"><span class="time">18:00–18:30</span><span class="activity">Dinner</span></div>
+    <div class="row" data-start="1110" data-end="1170"><span class="time">18:30–19:30</span><span class="activity">Free time / buffer</span></div>
+    <div class="row" data-start="1170" data-end="1200"><span class="time">19:30–20:00</span><span class="activity">Travel / prepare for Bible study</span></div>
+    <div class="row fixed" data-start="1200" data-end="1260"><span class="time">20:00–21:00</span><span class="activity">Bible study</span></div>
+    <div class="row" data-start="1260" data-end="1305"><span class="time">21:00–21:45</span><span class="activity">Reading</span></div>
+    <div class="row" data-start="1305" data-end="1335"><span class="time">21:45–22:15</span><span class="activity">Relaxation / social media</span></div>
+    <div class="row" data-start="1335" data-end="1365"><span class="time">22:15–22:45</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1365" data-end="1395"><span class="time">22:45–23:15</span><span class="activity">Check outfit for tomorrow</span></div>
+    <div class="row" data-start="1395" data-end="1410"><span class="time">23:15</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="4">
+    <div class="day-name-row"><p class="day-name">Thursday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for the day</span></div>
+    <div class="row" data-start="510" data-end="600"><span class="time">08:30–10:00</span><span class="activity">Research (1.5h)</span></div>
+    <div class="row fixed" data-start="600" data-end="660"><span class="time">10:00–11:00</span><span class="activity">Tutoring</span></div>
+    <div class="row" data-start="660" data-end="780"><span class="time">11:00–13:00</span><span class="activity">Research (2h)</span></div>
+    <div class="row" data-start="780" data-end="840"><span class="time">13:00–14:00</span><span class="activity">Lunch</span></div>
+    <div class="row" data-start="840" data-end="960"><span class="time">14:00–16:00</span><span class="activity">Research (2h)</span></div>
+    <div class="row" data-start="960" data-end="990"><span class="time">16:00–16:30</span><span class="activity">Break</span></div>
+    <div class="row fixed" data-start="990" data-end="1050"><span class="time">16:30–17:30</span><span class="activity">Cooking</span></div>
+    <div class="row" data-start="1050" data-end="1080"><span class="time">17:30–18:00</span><span class="activity">Free time / rest</span></div>
+    <div class="row fixed" data-start="1080" data-end="1200"><span class="time">18:00–20:00</span><span class="activity">Gym</span></div>
+    <div class="row" data-start="1200" data-end="1230"><span class="time">20:00–20:30</span><span class="activity">Dinner</span></div>
+    <div class="row" data-start="1230" data-end="1275"><span class="time">20:30–21:15</span><span class="activity">Reading</span></div>
+    <div class="row" data-start="1275" data-end="1320"><span class="time">21:15–22:00</span><span class="activity">Relaxation</span></div>
+    <div class="row" data-start="1320" data-end="1350"><span class="time">22:00–22:30</span><span class="activity">Social media</span></div>
+    <div class="row" data-start="1350" data-end="1365"><span class="time">22:30–22:45</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1365" data-end="1395"><span class="time">22:45–23:15</span><span class="activity">Check outfit for tomorrow</span></div>
+    <div class="row" data-start="1395" data-end="1410"><span class="time">23:15</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="5">
+    <div class="day-name-row"><p class="day-name">Friday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for the day</span></div>
+    <div class="row" data-start="510" data-end="690"><span class="time">08:30–11:30</span><span class="activity">Research (3h)</span></div>
+    <div class="row" data-start="690" data-end="750"><span class="time">11:30–12:30</span><span class="activity">Lunch</span></div>
+    <div class="row fixed" data-start="750" data-end="990"><span class="time">12:30–16:30</span><span class="activity">Job applications (4h, weekly session)</span></div>
+    <div class="row" data-start="990" data-end="1020"><span class="time">16:30–17:00</span><span class="activity">Break</span></div>
+    <div class="row" data-start="1020" data-end="1080"><span class="time">17:00–18:00</span><span class="activity">Research (1h)</span></div>
+    <div class="row fixed" data-start="1080" data-end="1140"><span class="time">18:00–19:00</span><span class="activity">Jog</span></div>
+    <div class="row" data-start="1140" data-end="1170"><span class="time">19:00–19:30</span><span class="activity">Dinner</span></div>
+    <div class="row fixed" data-start="1170" data-end="1320"><span class="time">19:30–22:00</span><span class="activity">Time with boyfriend</span></div>
+    <div class="row" data-start="1320" data-end="1350"><span class="time">22:00–22:30</span><span class="activity">Relaxation / wind-down</span></div>
+    <div class="row" data-start="1350" data-end="1380"><span class="time">22:30–23:00</span><span class="activity">Prayer &amp; prepare for bed</span></div>
+    <div class="row" data-start="1380" data-end="1395"><span class="time">23:00</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="6">
+    <div class="day-name-row"><p class="day-name">Saturday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="540" data-end="570"><span class="time">09:00–09:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="570" data-end="660"><span class="time">09:30–11:00</span><span class="activity">Prepare / breakfast</span></div>
+    <div class="row fixed" data-start="660" data-end="780"><span class="time">11:00–13:00</span><span class="activity">Laundry</span></div>
+    <div class="row" data-start="780" data-end="840"><span class="time">13:00–14:00</span><span class="activity">Lunch</span></div>
+    <div class="row fixed" data-start="840" data-end="1080"><span class="time">14:00–18:00</span><span class="activity">Marking (4h)</span></div>
+    <div class="row" data-start="1080" data-end="1110"><span class="time">18:00–18:30</span><span class="activity">Dinner</span></div>
+    <div class="row fixed" data-start="1110" data-end="1200"><span class="time">18:30–20:00</span><span class="activity">Time with boyfriend</span></div>
+    <div class="row" data-start="1200" data-end="1230"><span class="time">20:00–20:30</span><span class="activity">Travel / prepare for Bible study</span></div>
+    <div class="row fixed" data-start="1260" data-end="1320"><span class="time">21:00–22:00</span><span class="activity">Bible study</span></div>
+    <div class="row" data-start="1320" data-end="1350"><span class="time">22:00–22:30</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1350" data-end="1365"><span class="time">22:30</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="day-card" data-day="0">
+    <div class="day-name-row"><p class="day-name">Sunday</p><span class="today-badge">Today</span></div>
+    <div class="day-underline"></div>
+    <div class="row" data-start="360" data-end="390"><span class="time">06:00–06:30</span><span class="activity">Wake up, prayer &amp; devotion</span></div>
+    <div class="row" data-start="390" data-end="510"><span class="time">06:30–08:30</span><span class="activity">Prepare for church</span></div>
+    <div class="row" data-start="510" data-end="540"><span class="time">08:30–09:00</span><span class="activity">Travel to church</span></div>
+    <div class="row fixed" data-start="540" data-end="900"><span class="time">09:00–15:00</span><span class="activity">Church</span></div>
+    <div class="row" data-start="900" data-end="930"><span class="time">15:00–15:30</span><span class="activity">Travel home / rest</span></div>
+    <div class="row fixed" data-start="930" data-end="975"><span class="time">15:30–16:15</span><span class="activity">Cooking</span></div>
+    <div class="row" data-start="975" data-end="1005"><span class="time">16:15–16:45</span><span class="activity">Lunch</span></div>
+    <div class="row fixed" data-start="1005" data-end="1140"><span class="time">16:45–19:00</span><span class="activity">Time with boyfriend</span></div>
+    <div class="row" data-start="1140" data-end="1170"><span class="time">19:00–19:30</span><span class="activity">Dinner</span></div>
+    <div class="row" data-start="1170" data-end="1215"><span class="time">19:30–20:15</span><span class="activity">Reading</span></div>
+    <div class="row" data-start="1215" data-end="1260"><span class="time">20:15–21:00</span><span class="activity">Relaxation</span></div>
+    <div class="row" data-start="1260" data-end="1305"><span class="time">21:00–21:45</span><span class="activity">Social media</span></div>
+    <div class="row" data-start="1305" data-end="1335"><span class="time">21:45–22:15</span><span class="activity">Plan the week ahead</span></div>
+    <div class="row" data-start="1335" data-end="1350"><span class="time">22:15–22:30</span><span class="activity">Prayer &amp; wind-down</span></div>
+    <div class="row" data-start="1350" data-end="1365"><span class="time">22:30</span><span class="activity">Sleep</span></div>
+  </div>
+
+  <div class="notes">
+    <h2>How this works</h2>
+    <ul>
+      <li>Every time you open the app, it reads your device's clock, jumps to today's card, and scrolls straight to whatever block you're in right now — no clicking needed.</li>
+      <li>The current block is marked "Now" in dark pink so you can spot it instantly, then you're free to scroll anywhere else in the week. Tap the pink banner at the top to jump back to it.</li>
+      <li>Add this page to your phone's home screen (Share → Add to Home Screen on iPhone, or the install prompt on Android) to open it like an app — it keeps working without an internet connection once it's loaded.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
